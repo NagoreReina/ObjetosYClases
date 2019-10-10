@@ -19,8 +19,8 @@ namespace Ejercicio6
             
             Coche vehiculo = new Coche();
             Coche vehiculo2 = new Coche(120,5);
-            vehiculo.SetMarca("Patatonia");
-            vehiculo.SetModelo("Novesientosonse");
+            vehiculo.Marca = "Patatonia";
+            vehiculo.Modelo ="Novesientosonse";
             Console.ForegroundColor = ConsoleColor.Cyan;
             vehiculo.AllInfo();
             Console.ForegroundColor = ConsoleColor.Green;

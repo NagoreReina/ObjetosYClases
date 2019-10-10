@@ -6,32 +6,24 @@ namespace Ejercicio6
 {
     class Coche
     {
-        private int caballos;
-        private int puertas;
-        private string marca;
-        private string modelo;
-        public Coche() { marca = "Patata"; modelo = "Chinco"; }
+        public int Caballos { get; set; }
+        public int Puertas { get; set; }
+        public string Marca { get; set; }
+        public string Modelo { get; set; }
+        public Coche() { Marca = "Patata"; Modelo = "Chinco"; }
         public Coche(int caballos, int puertas) 
         { 
-            marca = "Patata"; 
-            modelo = "Chinco"; 
-            this.puertas = puertas; 
-            this.caballos = caballos; 
+            Marca = "Patata"; 
+            Modelo = "Chinco"; 
+            Puertas = puertas; 
+            Caballos = caballos; 
         }
-        public string GetMarca(){return marca;}
-        public string GetModelo(){return modelo;}
-        public int GetPuertas(){return puertas;}
-        public int GetCaballos(){return caballos;}
-        public void SetMarca(string m) {marca = m;}
-        public void SetModelo(string m) {modelo = m;}
-        public void SetPuertas(int p) {puertas = p;}
-        public void SetCaballos(int c) {puertas = c;}
         public void AllInfo()
         {
-            Console.WriteLine($"Marca: {marca}");
-            Console.WriteLine($"Modelo: {modelo}");
-            Console.WriteLine($"Caballos: {caballos}");
-            Console.WriteLine($"Puertas: {puertas}");
+            Console.WriteLine($"Marca: {Marca}");
+            Console.WriteLine($"Modelo: {Modelo}");
+            Console.WriteLine($"Caballos: {Caballos}");
+            Console.WriteLine($"Puertas: {Puertas}");
         }
     }
 }
