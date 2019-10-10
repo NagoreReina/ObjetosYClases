@@ -7,21 +7,11 @@ namespace Ejercicio4
     class Peso
     {
         private double peso;
-        private string unidad;
         public Peso(double peso, string unidad)
         {
             this.peso = peso;
-            if (unidad == "lb" || unidad == "li" || unidad == "oz" || unidad == "p" || unidad == "k" || unidad == "g" || unidad == "q")
-            {
-                this.unidad = unidad;
-            }
-            else
-            {
-                Console.WriteLine("La unidad introducida no es correcta, por defecto se aplica K");
-                this.unidad = "k";
-            }
             double valueInKg = 0;
-            switch (unidad)
+            switch (unidad.ToLower())
             {
                 /*
                 1 Libra = 16 onzas = 453 gramos.
@@ -31,7 +21,7 @@ namespace Ejercicio4
                 1 Quintal = 100 libras = 43,3 kg.
                 */
                 case "lb":
-                    valueInKg = peso / 0.453;
+                    valueInKg = peso * 0.453;
                     break;
                 case "li":
                     valueInKg = peso * 14.59;
@@ -51,12 +41,16 @@ namespace Ejercicio4
                 case "q":
                     valueInKg = peso * 43.3;
                     break;
+                default:
+                    Console.WriteLine("La unidad introducida no es correcta, por defecto se aplica K");
+                    valueInKg = peso;
+                    break;
             }
             peso = valueInKg;
         }
         public double GetLibras()
         {
-            peso = peso * 0.453;
+            peso = peso / 0.453;
             return peso;
         }
         public double GetLingotes()
@@ -66,7 +60,7 @@ namespace Ejercicio4
         }
         public double GetPeso(string unidad)
         {
-            switch (unidad)
+            switch (unidad.ToLower())
             {
 
                 case "lb":
